@@ -4,9 +4,9 @@
     "slug": "firstRestaurantApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/GrillKing.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/GrillKing.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
