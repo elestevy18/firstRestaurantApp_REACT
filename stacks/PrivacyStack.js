@@ -17,7 +17,7 @@ const MyStackNavigator = createStackNavigator(
   {
     initialRouteName: 'PrivacyList',
     defaultNavigationOptions: {  
-      headerStyle: {  backgroundColor: '#ff0000', marginTop: 0 },
+      headerStyle: {  backgroundColor: '#ff0000',  },
       //headerTintColor: '#fff',
       headerTitleStyle: { fontWeight: 'bold', color: '#fff', 
       alignSelf: 'center', paddingBottom: 20, textAlign: 'center', fontSize: 20 },

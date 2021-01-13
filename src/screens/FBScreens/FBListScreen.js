@@ -8,7 +8,7 @@ import { CommonActions, useNavigation } from '@react-navigation/native'
 
 const FBListScreen =  props => {
  
-  const onPress = () => props.navigation.navigate("GenSpec")
+  const onPress = () => props.navigation.navigate("Location")
   
   const navigation = useNavigation() // <-- add this line
   
@@ -20,7 +20,7 @@ const FBListScreen =  props => {
        
         <TouchableOpacity
        
-        onPress = {()=> props.navigation.navigate("GenSpec")}
+        onPress = {onPress}
         >
         
           <Text style={localstyle.Bigtext}>  Compliment</Text>
@@ -84,7 +84,7 @@ const localstyle = StyleSheet.create({
   
       backgroundColor: '#fff',
       fontSize: 24,
-     marginTop: 0,
+     
       justifyContent: 'center',
       alignItems: 'center',
       color: '#000000',

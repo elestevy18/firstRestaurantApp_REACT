@@ -1,29 +1,22 @@
 import React, {Component} from 'react';
-
-import { createStackNavigator } from 'react-navigation-stack';
 import {  DrawerActions, SafeAreaView } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import FeedbackScreen1 from '../src/screens/FeedbackScreen';
-import FBListScreen from '../src/screens/FBScreens/FBListScreen'
-import GenSpecScreen from '../src/screens/FBScreens/GenSpecScreen'
-import FBInputScreen from '../src/screens/FBScreens/FBInputScreen'
-import MLScreen from '../src/screens/FBScreens/MLScreen'
+import HomeScreen from '../src/screens/HomeScreens/HomeScreen';
+import OrderScreen from '../src/screens/HomeScreens/OrderScreen';
+import LocationsScreen from '../src/screens/HomeScreens/LocationsScreen';
 
 
 
 const MyStackNavigator = createStackNavigator(
   {    
     //Feedback: {screen: HomeScreen},
-   
-    Feedback: FeedbackScreen1,
-    Type: FBListScreen,
-    Location: GenSpecScreen,
-    Input: FBInputScreen,
-    maplist: MLScreen,
-    
+    Home: HomeScreen,
+    Order: OrderScreen,
+    Search: LocationsScreen,
   },
   {
-    initialRouteName: 'Feedback',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {  
       headerStyle: {  backgroundColor: '#ff0000',  },
       headerTintColor: '#fff',

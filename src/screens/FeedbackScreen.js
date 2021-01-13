@@ -10,20 +10,20 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const FeedbackScreen =  props => {
  
-  const onPress = () => navigation.navigate("FBList")
+  const onPress = () => props.navigation.navigate("Type")
   
   const navigation = useNavigation() // <-- add this line
   
   return (
    
-    <SafeAreaProvider>
+    <SafeAreaProvider style ={{backgroundColor: '#ffffff'}}>
     <View>
 
         <Text style={localstyle.redtextsmall}>What is this about?</Text>
        
         <TouchableOpacity
        
-        onPress = {()=> props.navigation.navigate("FBList")}
+        onPress = {onPress}
         >
         
           <Text style={localstyle.Bigtext}>  App</Text>
@@ -88,7 +88,7 @@ const localstyle = StyleSheet.create({
   
       backgroundColor: '#fff',
       fontSize: 24,
-     marginTop: 0,
+     
       justifyContent: 'center',
       alignItems: 'center',
       color: '#000000',

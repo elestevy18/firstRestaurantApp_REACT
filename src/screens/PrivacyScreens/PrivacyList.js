@@ -85,7 +85,7 @@ const localstyle = StyleSheet.create({
   
       backgroundColor: '#fff',
       fontSize: 24,
-     marginTop: 0,
+     
       justifyContent: 'center',
       alignItems: 'center',
       color: '#000000',

@@ -1,47 +1,42 @@
-import React from "react";
-import { View , Text, StyleSheet, Button, SafeAreaView, Image, TouchableOpacity, StatusBar } from "react-native";
+
+import { View , Text, StyleSheet, Button, 
+   Image, TouchableOpacity, StatusBar, Picker } from "react-native";
 import { CommonActions, useNavigation } from '@react-navigation/native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+//mport {Picker} from '@react-native-picker/picker';
+import React, { useState, useEffect, setState } from 'react';
 
 
-
-
-
-const GenSpecScreen =  props => {
+export default FeedbackScreen  =  props => {
  
-  const onPress = () => props.navigation.navigate("Input")
-  const onPress2 = () => props.navigation.navigate("maplist")
+  const onPress = () => props.navigation.navigate("Order")
   
-  const navigation = useNavigation() // <-- add this line
+  const navigation = useNavigation() 
+
+
   
   return (
    
-      <SafeAreaView style ={{backgroundColor: '#ffffff'}}>
+    <SafeAreaProvider style ={{backgroundColor: '#ffffff'}}>
+    <View>
 
-        <Text style={localstyle.redtextsmall}>Is this about a specific location??</Text>
-       
-        <TouchableOpacity
-       
-        onPress = {onPress}
-        >
-        
-          <Text style={localstyle.Bigtext}>  General Feedback</Text>
-         
-        </TouchableOpacity>
-        
+        <Image 
+        style ={{marginLeft: -13}}
+        source={require("../../../assets/GrillKing.png")}></Image>
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress2}>
-          <Text style={localstyle.Bigtext}>  Specific Location </Text>
+        onPress = {onPress}>
+          <Text style={localstyle.Bigtext}>  Start new order</Text>
         </TouchableOpacity>
 
 
-        
-      
+       
 
       <StatusBar style="auto" />
 
-      </SafeAreaView>
+      </View>
+    </SafeAreaProvider>
    
 
     
@@ -49,7 +44,7 @@ const GenSpecScreen =  props => {
 );
 };
 
-export default GenSpecScreen;
+//export default FeedbackScreen;
 
 
 const localstyle = StyleSheet.create({
@@ -72,7 +67,7 @@ const localstyle = StyleSheet.create({
   
       backgroundColor: '#fff',
       fontSize: 24,
-     
+    
       justifyContent: 'center',
       alignItems: 'center',
       color: '#000000',
