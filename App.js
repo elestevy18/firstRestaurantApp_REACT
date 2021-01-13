@@ -9,6 +9,15 @@ import MapView from 'react-native-maps';
 import ApiManager from './api/ApiManager';
 import RowLayout from './RowLayout';
 import filter from 'lodash.filter';
+import FeedbackScreen1 from './src/screens/FeedbackScreen';
+import PrivacyScreen1 from './src/screens/PrivacyScreen';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+import StackNavigator from './stacks/StackNavigator'
+import PrivacyStack from './stacks/PrivacyStack';
+import FBListScreen from './src/screens/FBScreens/FBListScreen'
+import GenSpecScreen from './src/screens/FBScreens/GenSpecScreen'
+
 
 const DATA = [
   {
@@ -332,6 +341,57 @@ const [fullData, setFullData] = useState([]);
 
 }
 
+function FeedbackScreen({ navigation }) {
+
+  
+  return (
+
+
+    <SafeAreaView style={localstyle.container}>
+      <View>
+
+        <Text style={localstyle.redtextsmall}>What is this about?</Text>
+       
+        <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}>
+        
+          <Text style={localstyle.Bigtext}>  App</Text>
+         
+        </TouchableOpacity>
+        
+
+        <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}>
+          <Text style={localstyle.Bigtext}>  Food</Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}>
+          <Text style={localstyle.Bigtext}>  Service</Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+        style={styles.button}
+        onPress={onPress}>
+          <Text style={localstyle.Bigtext}>  Other</Text>
+        </TouchableOpacity>
+
+
+      </View>
+    </SafeAreaView>
+
+    
+  );
+}
+
+
+
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -345,6 +405,9 @@ export default function App() {
         <Drawer.Screen name="Flatlist" component={Flatlist} />
         <Drawer.Screen name="Details" component={Details} />
         <Drawer.Screen name="SearchScreen" component={SearchScreen} />
+        <Drawer.Screen name="Feedback" component={StackNavigator} />
+        <Drawer.Screen name="Privacy and Agreements" 
+        component={PrivacyStack} />
 
 
       </Drawer.Navigator>
@@ -444,5 +507,36 @@ const localstyle = StyleSheet.create({
     fontSize: 18,
     width: 200,
     padding: 10
-  }
+  },
+  Bigtext: {
+  
+    backgroundColor: '#fff',
+    fontSize: 24,
+   marginTop: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#000000',
+    fontWeight: 'bold',
+    width: '103%',
+    borderColor: '#d3d3d3',
+    borderWidth: .5,
+    
+    paddingBottom: 20,
+    paddingTop: 20,
+
+    },
+
+    redtextsmall: {
+  
+      backgroundColor: '#fff',
+      fontSize: 18,
+     marginTop: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: '#FF0000',
+      fontWeight: 'bold',
+      marginBottom:20
+      
+  
+      },
 })
