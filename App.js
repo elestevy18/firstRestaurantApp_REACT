@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Button, View, Text, FlatList, StatusBar, SafeAreaView, StyleSheet,
-   Image, TouchableOpacity, Linking, Dimensions,  TextInput, TextField, Touchable, ActivityIndicator} from 'react-native';
+import React from 'react';
+import {  StyleSheet,
+    Dimensions, } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import styles from './styles';
-import WebView from 'react-native-webview';
-import ApiManager from './api/ApiManager';
-import RowLayout from './RowLayout';
-import filter from 'lodash.filter';
+import WebView from 'react-native-webview';;
 import StackNavigator from './stacks/StackNavigator'
 import PrivacyStack from './stacks/PrivacyStack';
 import HomeStack from './stacks/HomeStack';

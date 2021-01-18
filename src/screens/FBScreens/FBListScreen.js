@@ -7,8 +7,20 @@ import { CommonActions, useNavigation } from '@react-navigation/native'
 
 
 const FBListScreen =  props => {
+
+  const from = props.navigation.state.params.from
+
+  console.log("From " + from )
+
  
-  const onPress = () => props.navigation.navigate("Location")
+  const onPressCompliment = () => props.navigation.navigate
+  ("Location", {from: from, type: 'Compliment'})
+  const onPressIssue = () => props.navigation.navigate
+  ("Location", {from: from, type: 'Issue'})
+  const onPressQuestion = () => props.navigation.navigate
+  ("Location", {from: from, type: 'Question'})
+  const onPressSuggestion = () => props.navigation.navigate
+  ("Location", {from: from, type: 'Suggestion'})
   
   const navigation = useNavigation() // <-- add this line
   
@@ -20,7 +32,7 @@ const FBListScreen =  props => {
        
         <TouchableOpacity
        
-        onPress = {onPress}
+        onPress = {onPressCompliment}
         >
         
           <Text style={localstyle.Bigtext}>  Compliment</Text>
@@ -30,21 +42,21 @@ const FBListScreen =  props => {
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressIssue}>
           <Text style={localstyle.Bigtext}>  Issue</Text>
         </TouchableOpacity>
 
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressQuestion}>
           <Text style={localstyle.Bigtext}>  Question</Text>
         </TouchableOpacity>
 
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressSuggestion}>
           <Text style={localstyle.Bigtext}>  Suggestion</Text>
         </TouchableOpacity>
 

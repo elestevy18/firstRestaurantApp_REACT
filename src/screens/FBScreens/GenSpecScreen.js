@@ -7,9 +7,17 @@ import { CommonActions, useNavigation } from '@react-navigation/native'
 
 
 const GenSpecScreen =  props => {
+
+  const from = props.navigation.state.params.from
+  const type = props.navigation.state.params.type
+  console.log("From" + from + " type " + type )
+
  
-  const onPress = () => props.navigation.navigate("Input")
-  const onPress2 = () => props.navigation.navigate("maplist")
+  const onPress = () => props.navigation.navigate
+  ("Input", {type: type, from: from, genspec: "General"})
+  const onPress2 = () => props.navigation.navigate
+  ("maplist", {type: type, from: from, genspec: "Specific"})
+
   
   const navigation = useNavigation() // <-- add this line
   

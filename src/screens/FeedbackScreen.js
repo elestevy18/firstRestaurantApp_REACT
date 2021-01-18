@@ -10,8 +10,10 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 const FeedbackScreen =  props => {
  
-  const onPress = () => props.navigation.navigate("Type")
-  
+  const onPressApp = () => props.navigation.navigate("Type", {from: "App"})
+  const onPressFood = () => props.navigation.navigate("Type", {from: "Food"})
+  const onPressService = () => props.navigation.navigate("Type", {from: "Service"})
+  const onPressOther = () => props.navigation.navigate("Type", {from: "Other"})
   const navigation = useNavigation() // <-- add this line
   
   return (
@@ -23,7 +25,7 @@ const FeedbackScreen =  props => {
        
         <TouchableOpacity
        
-        onPress = {onPress}
+        onPress = {onPressApp}
         >
         
           <Text style={localstyle.Bigtext}>  App</Text>
@@ -33,21 +35,21 @@ const FeedbackScreen =  props => {
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressFood}>
           <Text style={localstyle.Bigtext}>  Food</Text>
         </TouchableOpacity>
 
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressService}>
           <Text style={localstyle.Bigtext}>  Service</Text>
         </TouchableOpacity>
 
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPress}>
+        onPress = {onPressOther}>
           <Text style={localstyle.Bigtext}>  Other</Text>
         </TouchableOpacity>
 

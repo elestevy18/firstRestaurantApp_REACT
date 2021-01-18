@@ -2,10 +2,12 @@ import MapView from 'react-native-maps';
 import { Button, View, Text, FlatList, StatusBar, SafeAreaView, StyleSheet,
   Image, TouchableOpacity, Linking, Dimensions,  TextInput, TextField, Touchable, ActivityIndicator} from 'react-native';
   import React, { useState, useEffect } from 'react';
+  import filter from 'lodash.filter';
+
 
   const API_ENDPOINT = `https://randomuser.me/api/?seed=1&page=1&results=20`;
 
-
+ 
 
 
   const contains = ({ name, email }, query) => {
@@ -17,7 +19,50 @@ import { Button, View, Text, FlatList, StatusBar, SafeAreaView, StyleSheet,
   
     return false;
   };
-function MapScreen() {
+
+const MapScreen = props => {
+  var date = ''
+  var orderMethod = ''
+  var contactBool = ''
+  var instructions = ''
+  var zip = ''
+  var city = ''
+  var apt = ''
+  var address = ''
+try{
+   date = props.navigation.state.params.date
+   orderMethod = props.navigation.state.params.orderMethod
+   contactBool = props.navigation.state.params.contactBool
+   instructions = props.navigation.state.params.instructions
+   zip = props.navigation.state.params.from
+   city = props.navigation.state.params.city
+   apt = props.navigation.state.params.apt
+   address = props.navigation.state.params.address
+  //console.log("Dowloaded memory")
+  
+} catch (e){
+//nothing to see here
+//console.log("Not Dowloaded memory")
+}
+  
+
+  
+
+  const onPress = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    storeData(date, orderMethod, contactBool, instructions, zip, city, apt, address)
+  }
+
+  const storeData = async (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+   try {
+//console.log("Not Dowloaded memory")
+
+    props.navigation.navigate("MenuCateg", {orderMethod: orderMethod, date: date, address: address,
+      apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+
+   } catch (e) {
+    props.navigation.navigate("MenuCateg")
+   }
+ }
 
 
 
@@ -34,6 +79,7 @@ function MapScreen() {
       const formattedQuery = text.toLowerCase();
       const filteredData = filter(fullData, user => {
         return contains(user, formattedQuery);
+
       });
       setData(filteredData);
       setQuery(text);
@@ -44,6 +90,7 @@ function MapScreen() {
     useEffect(() => {
       setIsLoading(true);
     
+      
       fetch(API_ENDPOINT)
         .then(response => response.json())
         .then(response => {
@@ -51,7 +98,10 @@ function MapScreen() {
     
           // ADD THIS
           setFullData(response.results);
+          //console.log(response.results + "response results")
     
+
+          
           setIsLoading(false);
         })
         .catch(err => {
@@ -79,6 +129,7 @@ function MapScreen() {
     }
   
     return (
+      
       <View style={localstyle.container2}>
         <Text style={localstyle.text2}>Favorite Contacts</Text>
         <FlatList
@@ -86,6 +137,10 @@ function MapScreen() {
           data={data}
           keyExtractor={item => item.first}
           renderItem={({ item }) => (
+            
+            <TouchableOpacity
+      onPress={() => onPress(date, orderMethod, contactBool, instructions, zip, city, apt, address)}>
+        
             <View style={localstyle.listItem}>
               <Image
                 source={{ uri: item.picture.thumbnail }}
@@ -97,9 +152,12 @@ function MapScreen() {
                 }`}</Text>
               </View>
             </View>
+            </TouchableOpacity>
+
           )}
         />
       </View>
+     
     );
   
   

@@ -4,7 +4,18 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import HomeScreen from '../src/screens/HomeScreens/HomeScreen';
 import OrderScreen from '../src/screens/HomeScreens/OrderScreen';
-import LocationsScreen from '../src/screens/HomeScreens/LocationsScreen';
+import LocationsScreen from '../src/screens/FBScreens/MLScreen';
+import MenuCategScreen from '../src/screens/HomeScreens/MenuCateg';
+import ListScreen from '../src/screens/FBScreens/List';
+import BurgerMenuScreen from '../src/screens/HomeScreens/BurgerMenu';
+import OrderQuantScreen from '../src/screens/HomeScreens/OrderQuant';
+import BasketReviewScreen from '../src/screens/HomeScreens/BasketReview';
+import HotDogMenuScreen from '../src/screens/HomeScreens/HotDogMenu';
+import SandwichMenuScreen from '../src/screens/HomeScreens/SandwichMenu';
+import FriesMenuScreen from '../src/screens/HomeScreens/FriesMenu';
+import DrinksMenuScreen from '../src/screens/HomeScreens/DrinksMenu';
+import ShakesMenuScreen from '../src/screens/HomeScreens/ShakesMenu';
+import CartScreen from '../src/screens/HomeScreens/Cart';
 
 
 
@@ -13,7 +24,25 @@ const MyStackNavigator = createStackNavigator(
     //Feedback: {screen: HomeScreen},
     Home: HomeScreen,
     Order: OrderScreen,
-    Search: LocationsScreen,
+    Search: ListScreen,
+    MenuCateg: MenuCategScreen,
+    BurgerMenu: BurgerMenuScreen,
+    OrderQuant: OrderQuantScreen,
+    BasketReview: BasketReviewScreen,
+    HotDogMenu: HotDogMenuScreen,
+    SandwichMenu: SandwichMenuScreen,
+    FriesMenu: FriesMenuScreen,
+    DrinksMenu: DrinksMenuScreen,
+    ShakesMenu: ShakesMenuScreen,
+    
+
+    // HotDogMenu:MenuCategScreen,
+    // SandwichMenu:MenuCategScreen,
+    // FriesMenu:MenuCategScreen,
+    // DrinksMenu:MenuCategScreen,
+    // ShakesMenu:MenuCategScreen,
+    // SpecialAssistance: MenuCategScreen,
+
   },
   {
     initialRouteName: 'Home',

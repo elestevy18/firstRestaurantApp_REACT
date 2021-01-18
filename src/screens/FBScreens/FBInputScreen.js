@@ -1,20 +1,36 @@
 import React from "react";
-import { View , Text, StyleSheet, Button, SafeAreaView, Image,
-   TouchableOpacity, StatusBar, TextInput } from "react-native";
-import { CommonActions, useNavigation } from '@react-navigation/native'
+import { View , Text, StyleSheet,
+   SafeAreaView, TextInput } from "react-native";
 
 
 
 
 
 const GenSpecScreen =  props => {
+
+  const from = props.navigation.state.params.from
+  const type = props.navigation.state.params.type
+  const genspec = props.navigation.state.params.genspec
+  console.log("From" + from + " type " + type + " genspec " + genspec)
+
+
   return (
     <SafeAreaView style={localstyle.container}>
 
+<View style={{flexDirection: 'row'}}>
 <Text style={{marginLeft: 8}}
->What      App</Text>
+>What</Text>
+<Text style={{marginLeft: 8}}
+>{from}</Text>
+</View> 
 
-<Text style={{marginLeft: 8}}>Why       Compliment</Text>
+<View style={{flexDirection: 'row'}}>
+<Text style={{marginLeft: 8}}
+>Why</Text>
+<Text style={{marginLeft: 8}}
+>{type}</Text>
+</View> 
+
 <TextInput
 style={localstyle.borders}>Full Name
 </TextInput>
