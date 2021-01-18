@@ -7,7 +7,7 @@ VsCode Version: 1.52.1
 Node.js Version: 14.15.3
 
 Relevant technologies include:
-React stack, drawer,and tab navigation.
+React stack, drawer, and tab navigation.
 Axios api 
 React Maps
 React Webview
