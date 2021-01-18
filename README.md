@@ -2,6 +2,9 @@
 
 This project utilizes react with a few libraries.
 
+Android Build: https://i.diawi.com/iQvVt2
+iOS build:
+
 Project Version: 1.0.0
 Expo verion: 1.0.0
 VsCode Version: 1.52.1
