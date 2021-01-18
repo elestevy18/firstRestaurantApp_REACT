@@ -2,6 +2,7 @@
 
 This project utilizes react with a few libraries.
 
+Project Version: 1.0.0
 Expo verion: 1.0.0
 VsCode Version: 1.52.1
 Node.js Version: 14.15.3
