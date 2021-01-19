@@ -1,5 +1,6 @@
 import React from "react";
-import { View , Text, StyleSheet, Button,  Image, TouchableOpacity, StatusBar } from "react-native";
+import { View , Text, StyleSheet, Button, 
+     Image, TouchableOpacity, StatusBar, Alert } from "react-native";
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { format } from "date-fns";
@@ -12,7 +13,7 @@ export default MenuCateg =  props => {
   var formattedDate = ''
   var orderMethod = ''
   var contactBool = ''
-  var intructions = ''
+  var instructions = ''
   var zip = ''
   var city = ''
   var apt = ''
@@ -23,7 +24,7 @@ export default MenuCateg =  props => {
      formattedDate = format(date, "MMMM do, yyyy H:mma");
      orderMethod = props.navigation.state.params.orderMethod
      contactBool = props.navigation.state.params.contactBool
-     intructions = props.navigation.state.params.intructions
+     instructions = props.navigation.state.params.instructions
      zip = props.navigation.state.params.from
      city = props.navigation.state.params.city
      apt = props.navigation.state.params.apt
@@ -33,19 +34,17 @@ export default MenuCateg =  props => {
   //nothing to see here
   }
  
-  const onPressBurger = () => props.navigation.navigate("BurgerMenu")
-  const onPressHotDog = () => props.navigation.navigate("HotDogMenu")
-  const onPressSandwich = () => props.navigation.navigate("SandwichMenu")
-  const onPressFries = () => props.navigation.navigate("FriesMenu")
-  const onPressDrinks = () => props.navigation.navigate("DrinksMenu")
-  const onPressShakes = () => props.navigation.navigate("ShakesMenu")
+  //const  = () => props.navigation.navigate("BurgerMenu")
+ 
   
-  const basketReview = () => {
-    console.log("basket pressed")
-    props.navigation.navigate("BasketReview")} 
-  const navigation = useNavigation()
+//   const toGiftCard = props => props.navigation.navigate("GiftCard")
 
-  
+//   const toGiftCard = props => props.navigation.navigate("NewCard")
+
+
+ 
+
+
 
   return (
    
@@ -59,52 +58,49 @@ export default MenuCateg =  props => {
        
         <TouchableOpacity
        
-        onPress = {onPressBurger}
+        onPress = {() => props.navigation.navigate("NewCard")}
         >
         
-          <Text style={localstyle.Bigtext}>  Burgers</Text>
+          <Text style={localstyle.Bigtext}>  New Credit Card</Text>
          
         </TouchableOpacity>
         
 
         <TouchableOpacity
         style={localstyle.button}
-        onPress = {onPressHotDog}>
-          <Text style={localstyle.Bigtext}>  Hot Dogs</Text>
+        onPress = {() => props.navigation.navigate("GiftCard")}>
+          <Text style={localstyle.Bigtext}>  Five Guys Gift Card</Text>
         </TouchableOpacity>
 
 
-        <TouchableOpacity
-        style={localstyle.button}
-        onPress = {onPressSandwich}>
-          <Text style={localstyle.Bigtext}>  Sandwiches</Text>
-        </TouchableOpacity>
 
 
-        <TouchableOpacity
-        style={localstyle.button}
-        onPress = {onPressFries}>
-          <Text style={localstyle.Bigtext}>  Fries</Text>
-        </TouchableOpacity>
+        <Button title = "Contine"
+   color= "#FF0000"
+   style = {localstyle.margin}  
+    onPress = {()=> {
+    if (//place condition
+        1==1){
+      Alert.alert(
+       "Missing Information",
+       "Please provide first name, last name and password.",
+       [
+         {
+           text: "Cancel",
+           onPress: () => console.log("Cancel Pressed"),
+           style: "cancel"
+         },
+         { text: "OK", onPress: () => console.log("OK Pressed") }
+       ],
+       { cancelable: false }
+     );
+     } else {
+       props.navigation.navigate("Payment")
+       
+     }
+   }}></Button>
 
-        <TouchableOpacity
-        style={localstyle.button}
-        onPress = {onPressDrinks}>
-          <Text style={localstyle.Bigtext}>  Drinks</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-        style={localstyle.button}
-        onPress = {onPressShakes}>
-          <Text style={localstyle.Bigtext}>  Shakes</Text>
-        </TouchableOpacity>
-
-        <Button
-        onPress={basketReview}
-        title='Review Basket'
-        color='red'
-        style={{marginTop: 8}}
-        />
+      
 
       <StatusBar style="auto" />
 

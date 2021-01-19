@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { View , Text, StyleSheet, Button,  Image, TouchableOpacity, StatusBar } from "react-native";
-import { CommonActions, useNavigation } from '@react-navigation/native'
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
+import { View , Text, StyleSheet,
+   TouchableOpacity, StatusBar } from "react-native";
+import {  useNavigation } from '@react-navigation/native'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { format } from "date-fns";
 
 
@@ -37,88 +38,38 @@ export default MenuCateg =  props => {
   //nothing to see here
   }
 
-  const getData = async () => {
-    try {
-      const value = await AsyncStorage.getItem('@storage_Key')
-      if(value !== null) {
-        // value previously stored
-      }
-    } catch(e) {
-      // error reading value
-    }
-  }
-  
+    // console.log(orderMethod + ' ' + contactBool + ' ' +  calories + ' ' +  price + ' ' + 
+    //       burgerName + ' ' +  date + ' ' +  quantity + ' ' + bowlBool + ' ' + 
+    //       wrapBool + ' ' + lettuceBool + ' ' + mayoBool + ' ' + ketchupBool + ' ' + 
+    //       mustardBool + ' ' + picklesBool + ' ' + ATWBool + ' ' + address + ' ' +
+    //       ' ' + apt + ' ' +' ' + city + ' ' +' ' + zip + ' ' +' ' + instructions + ' '  )
 
  
 
  
   const onPressHamburger = (price, burgername, calories) => {
    
-    try {
-      
-
+    //try {
+      type =  burgername.toString()
 
       props.navigation.navigate("OrderQuant",
        {orderMethod: orderMethod,
           contactBool: contactBool, calories: calories,
-         price: price, burgerName: burgername, 
+         price: price, type: type, 
          date: date, address: address,
         apt: apt, city: city, zip: zip, 
         instructions: instructions})
       //console.log('pass data success HB Menu' + orderMethod + burgername )
 
-     } catch (e) {
-      props.navigation.navigate("OrderQuant")
-     }
+     //} catch (e) {
+     // props.navigation.navigate("OrderQuant")
+     //}
     // props.navigation.navigate("OrderQuant",
     //  {price: {price}, burgerName: {burgername}})
 
   }
  
 
-//    const onPressLittleHamburger = () => 
-//   setPrice(6.49 )
-//   setBurgerName('Little Hamburger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-//    const onPressLittleCheeseburger = () => 
-//   setPrice(7.09)
-//   setBurgerName('Little Cheeseburger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-//    const onPressCheeseburger = () => 
-//   setPrice(8.39)
-//   setBurgerName('Cheeseburger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-
-//    const onPressBaconBurger = () => 
-//   setPrice(9.49)
-//   setBurgerName('Bacon Burger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-//    const onPressLittleBaconBurger = () => 
-//   setPrice(7.39)
-//   setBurgerName('Little Bacon Burger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-//    const onPressBaconCheeseburger = () => 
-//   setPrice(10.19)
-//   setBurgerName('Bacon Cheeseburger')
-//   props.navigation.navigate("BurgerMenu",
-//    {price: {price}, burgerName: {burgerName}})
-
-//    const onPressLittleBaconCheeseburger = () => 
-//   setPrice(8.09)
-//   setBurgerName('Little Bacon Cheeseburger')
-//   props.navigation.navigate("FoodQuant",
-//    {price: {price}, burgerName: {burgerName}})
-  
    const navigation = useNavigation() 
 
 
@@ -127,60 +78,49 @@ export default MenuCateg =  props => {
     <SafeAreaProvider style ={{backgroundColor: '#ffffff'}}>
     <View>
        
-        <TouchableOpacity
-        onPress = {() => onPressHamburger('8.39', 'Hamburger', '840')}
-        >
-            <View style={localstyle.Row}>
-            <Text tyle={localstyle.Bigtext}> 
-             Hamburger</Text>
-             <Text tyle={localstyle.smalltext}>
-             $8.39  840 Calories
-             </Text>
-            </View>
-        </TouchableOpacity>
-
+     
        
 
  <TouchableOpacity
-        onPress = {() => onPressHamburger('6.49', 'Little Hamburger', '540')}>
+        onPress = {() => onPressHamburger('5.29', 'Grilled Cheese Sandwich', '420')}>
             <View style={localstyle.Row}>
             <Text tyle={localstyle.Bigtext}> 
-             Little Hamburger</Text>
+             Grilled Cheese Sandwich</Text>
              <Text tyle={localstyle.smalltext}>
-             $6.49  540 Calories
+             $5.29  420 Calories
              </Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress = {() => onPressHamburger('9.09', 'Cheeseburger', '980')}>
+        onPress = {() => onPressHamburger('4.59', 'Veggie Sandwich', '280')}>
             <View style={localstyle.Row}>
             <Text tyle={localstyle.Bigtext}> 
-             Cheeseburger</Text>
+             Veggie Sandwich</Text>
              <Text tyle={localstyle.smalltext}>
-             $9.09  980 Calories
+             $4.59  280 Calories
              </Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress = {() => onPressHamburger('7.09', 'Little Cheeseburger', '610')}>
+        onPress = {() => onPressHamburger('6.59', 'BLT Sandwich', '600')}>
             <View style={localstyle.Row}>
             <Text tyle={localstyle.Bigtext}> 
-             Little Cheeseburger</Text>
+             BLT Sandwich</Text>
              <Text tyle={localstyle.smalltext}>
-             $7.09  610 Calories
+             $6.59  600 Calories
              </Text>
             </View>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress = {() => onPressHamburger('9.49', 'Bacon Burger', '920')}>
+        onPress = {() => onPressHamburger('5.29', 'Veggie Sandwich with Cheese', '420')}>
             <View style={localstyle.Row}>
             <Text tyle={localstyle.Bigtext}> 
-             Bacon Burger</Text>
+             Veggie Sandwich with Cheese</Text>
              <Text tyle={localstyle.smalltext}>
-             $9.49  920 Calories
+             $5.29  420 Calories
              </Text>
             </View>
         </TouchableOpacity>

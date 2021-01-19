@@ -34,12 +34,8 @@ export default MenuCateg =  props => {
   }
  
   //const  = () => props.navigation.navigate("BurgerMenu")
-  const onPressHotDog = () => props.navigation.navigate("HotDogMenu")
-  const onPressSandwich = () => props.navigation.navigate("SandwichMenu")
-  const onPressFries = () => props.navigation.navigate("FriesMenu")
-  const onPressDrinks = () => props.navigation.navigate("DrinksMenu")
-  const onPressShakes = () => props.navigation.navigate("ShakesMenu")
-
+ 
+  
   const onPressBurger = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
     try {
       props.navigation.navigate("BurgerMenu", {orderMethod: orderMethod, date: date, address: address,
@@ -49,16 +45,52 @@ export default MenuCateg =  props => {
      }
   }
 
-  const storeData = async (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
-   
- }
-  
-  const basketReview = () => {
-    console.log("basket pressed")
-    props.navigation.navigate("BasketReview")} 
-  const navigation = useNavigation()
+  const onPressHotDog = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    try {
+      props.navigation.navigate("HotDogMenu", {orderMethod: orderMethod, date: date, address: address,
+        apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+     } catch (e) {
+      props.navigation.navigate("HotDogMenu")
+     }
+  }
 
-  
+  const onPressSandwich = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    try {
+      props.navigation.navigate("SandwichMenu", {orderMethod: orderMethod, date: date, address: address,
+        apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+     } catch (e) {
+      props.navigation.navigate("SandwichMenu")
+     }
+  }
+
+  const onPressFries = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    try {
+      props.navigation.navigate("FriesMenu", {orderMethod: orderMethod, date: date, address: address,
+        apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+     } catch (e) {
+      props.navigation.navigate("FriesMenu")
+     }
+  }
+
+  const onPressDrinks = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    try {
+      props.navigation.navigate("DrinksMenu", {orderMethod: orderMethod, date: date, address: address,
+        apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+     } catch (e) {
+      props.navigation.navigate("DrinksMenu")
+     }
+  }
+
+  const onPressShakes = (date, orderMethod, contactBool, instructions, zip, city, apt, address) => {
+    try {
+      props.navigation.navigate("ShakesMenu", {orderMethod: orderMethod, date: date, address: address,
+        apt: apt, city: city, zip: zip, instructions: instructions, contactBool: contactBool})
+     } catch (e) {
+      props.navigation.navigate("ShakesMenu")
+     }
+  }
+
+
 
   return (
    

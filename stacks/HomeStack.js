@@ -15,7 +15,12 @@ import SandwichMenuScreen from '../src/screens/HomeScreens/SandwichMenu';
 import FriesMenuScreen from '../src/screens/HomeScreens/FriesMenu';
 import DrinksMenuScreen from '../src/screens/HomeScreens/DrinksMenu';
 import ShakesMenuScreen from '../src/screens/HomeScreens/ShakesMenu';
-import CartScreen from '../src/screens/HomeScreens/Cart';
+import CheckoutScreen from '../src/screens/HomeScreens/CheckoutScreen';
+import DrinksScreen from '../src/screens/HomeScreens/DrinkQuant';
+import FriesQuantScreen from '../src/screens/HomeScreens/FriesQuant';
+import PaymentScreen from '../src/screens/HomeScreens/Payment';
+import NewCardScreen from '../src/screens/HomeScreens/NewCard';
+import GiftCardSCreen from '../src/screens/HomeScreens/GiftCard';
 
 
 
@@ -34,15 +39,15 @@ const MyStackNavigator = createStackNavigator(
     FriesMenu: FriesMenuScreen,
     DrinksMenu: DrinksMenuScreen,
     ShakesMenu: ShakesMenuScreen,
+    Checkout: CheckoutScreen,
+    DrinkQuant: DrinksScreen,
+    FriesQuant: FriesQuantScreen,
+    Payment: PaymentScreen,
+    NewCard: NewCardScreen,
+    GiftCard: GiftCardSCreen,
+   
+
     
-
-    // HotDogMenu:MenuCategScreen,
-    // SandwichMenu:MenuCategScreen,
-    // FriesMenu:MenuCategScreen,
-    // DrinksMenu:MenuCategScreen,
-    // ShakesMenu:MenuCategScreen,
-    // SpecialAssistance: MenuCategScreen,
-
   },
   {
     initialRouteName: 'Home',

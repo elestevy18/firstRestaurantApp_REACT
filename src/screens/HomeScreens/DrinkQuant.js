@@ -86,15 +86,15 @@ export default MenuCateg =  props => {
     const [count, setCount] = useState(1);
     const [bowlBool, toggleBowlBool] = useState(false);
     const [wrapBool, toggleWrapBool] = useState(false);
-    const [lettuceBool, toggleLettuceBool] = useState(false);
-    const [mayoBool, toggleMayoBool] = useState(false);
-    const [ketchupBool, toggleKetchupBool] = useState(false);
-    const [mustardBool, toggleMustardBool] = useState(false);
-    const [picklesBool, togglePicklesBool] = useState(false);
-    const [ATWBool, toggleATWBool] = useState(false);
+    const [lemonadeBool, togglelemonadeBool] = useState(false);
+    const [dietCokeBool, toggledietCokeBool] = useState(false);
+    const [spriteBool, togglespriteBool] = useState(false);
+    const [rootBeerBool, togglerootBeerBool] = useState(false);
+    const [drPepperBool, toggledrPepperBool] = useState(false);
+    const [coke, togglecoke] = useState(false);
     
-    const addToBasket =  (orderMethod, quantity,   bowlBool, wrapBool, lettuceBool,
-       mayoBool, ketchupBool, mustardBool, picklesBool, ATWBool) => {
+    const addToBasket =  (orderMethod, quantity,   bowlBool, wrapBool, lemonadeBool,
+       dietCokeBool, spriteBool, rootBeerBool, drPepperBool, coke) => {
 
         _storeData
 
@@ -103,8 +103,8 @@ export default MenuCateg =  props => {
         //try {
           // console.log("Order Quant:" + orderMethod + ' ' + burgerName + ' ' +  calories + ' ' +  price + ' ' + 
           //  burgerName + ' ' +  date + ' ' +  quantity + ' ' + bowlBool + ' ' + 
-          // wrapBool + ' ' + lettuceBool + ' ' + mayoBool + ' ' + ketchupBool + ' ' + 
-          // mustardBool + ' ' + picklesBool + ' ' + ATWBool + ' ' + address + ' ' +
+          // wrapBool + ' ' + lemonadeBool + ' ' + dietCokeBool + ' ' + spriteBool + ' ' + 
+          // rootBeerBool + ' ' + drPepperBool + ' ' + coke + ' ' + address + ' ' +
           // ' ' + apt + ' ' +' ' + city + ' ' +' ' + zip + ' ' +' ' + instructions + ' '  )
           console.log("BErguer pass" + burgerName)
           props.navigation.navigate("BasketReview",
@@ -112,9 +112,9 @@ export default MenuCateg =  props => {
               contactBool: contactBool, calories: calories,
              price: price, burgerName: burgerName, 
              date: date, quantity: quantity, bowlBool: bowlBool, wrapBool: wrapBool,
-             lettuceBool: lettuceBool, mayoBool: mayoBool,
-             ketchupBool: ketchupBool, mustardBool: mustardBool,
-             picklesBool: picklesBool, ATWBool:ATWBool, 
+             lemonadeBool: lemonadeBool, dietCokeBool: dietCokeBool,
+             spriteBool: spriteBool, rootBeerBool: rootBeerBool,
+             drPepperBool: drPepperBool, coke:coke, 
 
              address: address,
             apt: apt, city: city, zip: zip, 
@@ -177,61 +177,10 @@ export default MenuCateg =  props => {
        
 
        
-        <Text style={localstyle.boldtextsmall}>
-        Prefer no bun?</Text>
-
-
-            <View style={localstyle.Row}>
-             <View>
-             <CheckboxFormX
-                  style={{ 
-                    width: 20,
-                  tintColor: 'red',
-                iconColor: 'red',
-                backgroundColor: 'red,',
-                marginRight: 16,
-          }}
-                  dataSource={mockData}
-                  itemShowKey="label"
-                  itemCheckedKey="RNchecked"
-                  iconSize={20}
-                  formHorizontal={false}
-                  labelHorizontal={false}
-                  iconColor={'#ff0000'}
-                  onChange={() => toggleBowlBool(!bowlBool)}/>
-              </View>
-
-              <Text tyle={localstyle.Bigtext}> 
-             No bun (Bowl)</Text>
-            </View>
-
-
-            <View style={localstyle.Row}>
-             <View>
-             <CheckboxFormX
-                  style={{ 
-                    width: 20,
-                  tintColor: 'red',
-                iconColor: 'red',
-                backgroundColor: 'red,',
-                marginRight: 16,
-          }}
-                  dataSource={mockData}
-                  itemShowKey="label"
-                  itemCheckedKey="RNchecked"
-                  iconSize={20}
-                  formHorizontal={false}
-                  labelHorizontal={false}
-                  iconColor={'#ff0000'}
-                  onChange={() => wrapBool(!toggleWrapBool)}/>
-              </View>
-
-              <Text tyle={localstyle.Bigtext}> 
-             No bun (Wrapped in Lettuce)</Text>
-            </View>
+       
 
         <Text style={localstyle.boldtextsmall}>
-        Select Toppings</Text>
+        Drink Flavor (Choose 1)</Text>
 
         <View style={localstyle.Row}>
              <View>
@@ -250,11 +199,11 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => toggleATWBool(!ATWBool)}/>
+                  onChange={() => togglecoke(!coke)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             All the Way</Text>
+             Coke</Text>
             </View>
 
             <View style={localstyle.Row}>
@@ -274,11 +223,11 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => mayoBool(!toggleMayoBool)}/>
+                  onChange={() => dietCokeBool(!toggledietCokeBool)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             Mayo</Text>
+             Diet Coke</Text>
             </View>
 
             <View style={localstyle.Row}>
@@ -298,11 +247,11 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => ketchupBool(!toggleKetchupBool)}/>
+                  onChange={() => spriteBool(!togglespriteBool)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             Ketchup</Text>
+             Sprite</Text>
             </View>
 
             <View style={localstyle.Row}>
@@ -322,11 +271,11 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => mustardBool(!toggleMustardBool)}/>
+                  onChange={() => rootBeerBool(!togglerootBeerBool)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             Mustard</Text>
+             Root Beer</Text>
             </View>
 
             <View style={localstyle.Row}>
@@ -346,11 +295,11 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => lettuceBool(!toggleLettuceBool)}/>
+                  onChange={() => lemonadeBool(!togglelemonadeBool)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             Lettuce</Text>
+             lemonade</Text>
             </View>
 
             <View style={localstyle.Row}>
@@ -370,15 +319,15 @@ export default MenuCateg =  props => {
                   formHorizontal={false}
                   labelHorizontal={false}
                   iconColor={'#ff0000'}
-                  onChange={() => picklesBool(!togglePicklesBool)}/>
+                  onChange={() => drPepperBool(!toggledrPepperBool)}/>
               </View>
 
               <Text tyle={localstyle.Bigtext}> 
-             Pickles</Text>
+             Dr. Pepper</Text>
             </View>
 
-            <Button onPress={()=>addToBasket(orderMethod, count, bowlBool, wrapBool, lettuceBool,
-       mayoBool, ketchupBool, mustardBool, picklesBool, ATWBool)}
+            <Button onPress={()=>addToBasket(orderMethod, count, bowlBool, wrapBool, lemonadeBool,
+       dietCokeBool, spriteBool, rootBeerBool, drPepperBool, coke)}
             title="Add to Basket"
             style={{width: '90%',
             backgroundColor: 'red'

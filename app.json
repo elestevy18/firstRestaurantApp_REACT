@@ -4,7 +4,7 @@
     "slug": "firstRestaurantApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/GrillKing.png",
+    "icon": "./assets/grillkingicon.png",
     "splash": {
       "image": "./assets/GrillKing.png",
       "resizeMode": "contain",
@@ -17,7 +17,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.Aofx.grillMaster"
     },
     "android": {
       "package": "com.Aofx.grillMaster",

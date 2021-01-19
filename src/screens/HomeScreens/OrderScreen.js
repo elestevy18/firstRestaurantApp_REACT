@@ -7,8 +7,6 @@ import { SafeAreaProvider} from 'react-native-safe-area-context';
 import React, { useState} from 'react';
 import CheckboxFormX from 'react-native-checkbox-form';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { add, color } from "react-native-reanimated";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const mockData = [
   {
@@ -39,18 +37,6 @@ const FeedbackScreen =  props => {
       setModeDate(currentMode);
     };
 
-    const showModeDate = (currentMode) => {
-      setShow(true);
-      setModeDate(currentMode);
-    };
-  
-    const showDatepicker = () => {
-      showMode('date');
-    };
-  
-    const showTimepicker = () => {
-      showMode('date');
-    };
 
 //SOME HOOKS FOR ASSIGNING TEXT AND VISIBILTY 
 
@@ -199,19 +185,6 @@ const onPress2 = () =>
     
   }
 }
-
-
-
-
-const onPress = () => props.navigation.navigate("Search")
-
-const navigation = useNavigation() 
-state = {
-  language: 'java',
-};
-const [selectedValue, setSelectedValue] = useState("inStore");
-const [selectedValue2, setSelectedValue2] = useState("asap");
-
 
 state = {
 country: 'usa'
